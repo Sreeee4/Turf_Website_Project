@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .container-top-main {
+        position: relative;
+        width: 100%;
+        height: 15vh;
+    }
+
+    .container-top-right {
+        position: absolute;
+        right: 0;
+        width: 35%;
+        height: 6vh;
+        margin-top: 1%;
+    }
+
+    .container-top-right a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .container-top-right nav {
+        display: flex;
+        justify-content: space-evenly;
+        width: 89%;
+        position: absolute;
+        right: 0;
+        font-size: 17px;
+        margin: 10px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .container-top-logo {
+        position: absolute;
+        left: 0;
+        width: 26%;
+        height: 12vh;
+        margin-top: 1%;
+    }
+
+    .container-top-logo .logo {
+        position: absolute;
+        font-size: 58px;
+        margin: 0;
+        font-family: Papyrus;
+        color: orange;
+        margin-left: 3%;
+        margin-top: -15px;
+    }
+
+    .container-top-mid {
+        position: absolute;
+        left: 34%;
+        width: 31%;
+        margin-top: 1.7%;
+    }
+
+    .container-top-mid input {
+        width: 31vw;
+        padding: 5px 5px;
+        border-radius: 10px;
+        outline: none;
+        border-color: silver;
+    }
+
+    /* Container-mid start here */
+    .container-mid {
+
+       border-top: 2px solid black;
+        position: relative;
+        width: 100%;
+        height: 58vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .container-mid .box {
+        margin-top: 3%;
+        height: 37vh;
+        width: 20vw;
+        border-radius: 10px;
+        transition: 0.5s;
+    }
+
+    .container-mid .box img {
+        width: 100%;
+        object-fit: cover;
+        height: 37.7vh;
+        border-radius: 9px;
+    }
+
+    .context {
+        height: 10vh;
+        margin: 0;
+        text-align: center;
+    }
+
+    .context li {
+        list-style: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin: 8px 5px;
+        font-size: 1.1rem;
+    }
+
+    .context ul {
+        margin: 8px 8px;
+        padding: 0%;
+    }
+    /* container-mid ends here */
+
+    .container-mid-blow{
+        border-top: 2px solid black;
+        position: relative;
+        width: 100%;
+        height: 58vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .container-mid-blow .box {
+        margin-top: 3%;
+        height: 37vh;
+        width: 20vw;
+        border-radius: 10px;
+        transition: 0.5s;
+    }
+
+    .container-mid-blow .box img {
+        width: 100%;
+        object-fit: cover;
+        height: 37.7vh;
+        border-radius: 9px;
+     
+    }
+    .box:hover{
+        transform: translate(0px , -10px);
+    }
+</style>
+
+<body>
+    <div class="container-top-main">
+
+        <div class="container-top-logo">
+            <h1 class="logo">Football Saga</h1>
+        </div>
+        <div class="container-top-mid">
+            <input type="search" placeholder="Search Bar">
+        </div>
+        <div class="container-top-right">
+            <nav>
+                <a href="bookturf.html">BOOK TURF</a>
+                <a href="admin.html">ADMIN LOGIN</a>
+                <a href="">ABOUT US</a>
+                <a href="">CONTACT US</a>
+            </nav>
+        </div>
+
+    </div>
+    <div class="container-mid">
+        <div class="box">
+            <a href="page-1.html">
+
+                <img src="1.jpg"
+                alt="">
+            </a>
+            <div class="context">
+                <ul>
+                    <li>Name : KALIDAS</li>
+                    <li> location : MULUND</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <a href="page-2.html">
+                <img src="2.jpg"
+                alt="">
+            </a>
+            <div class="context">
+                <ul>
+                    <li>Name : OFF SHOTS</li>
+                    <li> location : BHANDUP</li>
+
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="box">
+            <a href="page-3.html">
+                <img src="3.jpg"
+                alt="">
+            </a>
+            <div class="context">
+                <ul>
+                    <li>Name : ATHLON</li>
+                    <li> location : MULUND</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="box">
+            <a href="page-4.html">
+                <img src="4.jpeg"
+                alt="">
+            </a>
+            <div class="context">
+                <ul>
+                    <li>Name : PLAYGROUND</li>
+                    <li> location : BHANDUP</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-mid-blow">
+        <div class="box">
+            <a href="page-5.html">
+                <img src="5.jpg"
+                alt="">
+            </a>
+            <div class="context">
+                <ul>
+                    <li>Name : THE BIG TURF</li>
+                    <li> location : VIKHROLI</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <a href="page-6.html">
+                <img src="6.jpg"
+                alt="">
+            </a>
+            <div class="context">
+                <ul>
+                    <li>Name : NEVILLE D'SOUZA</li>
+                    <li> location : BANDRA</li>
+
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="box">
+            <a href="page-7.html">
+                <img src="7.jpg"
+                alt="">
+            </a>
+            <div class="context">
+                <ul>
+                    <li>Name : URBAN SPORTS</li>
+                    <li> location : ANDHERI</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="box">
+            <a href="page-8.html">
+                <img src="8.jpg"
+                alt="">
+            </a>
+            <div class="context">
+                <ul>
+                    <li>Name : KICK</li>
+                    <li> location : POWAI</li>              
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

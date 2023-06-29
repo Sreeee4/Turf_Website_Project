@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Saga</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+
+<style>
+    .bar {
+        position: absolute;
+        width: 25%;
+        height: 5vh;
+        margin-left: 35%;
+        margin-top: 17px;
+    }
+
+    #search-bar {
+        position: absolute;
+        width: 99%;
+        padding: 7px 26px;
+        border-radius: 10px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.0rem;
+        outline: none;
+    }
+</style>
+
+<body>
+
+    <div class="main">
+        <div class="icon">
+            <h1 class="logo">Football Saga</h1>
+        </div>
+        <div class="navbar">
+
+            <div class="menu">
+                <ul>
+                    <li><a href="bookturf.html">BOOK TURF</a></li>
+                    <li><a href="admin.html">ADMIN LOGIN</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="form">
+            <h2>Login Here</h2>
+            <input type="email" name="email" id="emailinput" placeholder="Enter Email Here">
+            <input type="password" id="passwordinput" name="" placeholder="Enter Password Here">
+            <button class="btnn" id="signinbtn"><a href="#">Login</a></button>
+            <p class="link">Don't have an account<br>
+                <a href="signup.html">Sign up </a> here</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="main-box">
+
+            <div class="box-1">
+                <div class="heading">
+                    <h1>About Us</h1>
+                </div>
+
+                <div class="content">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, quasi fugiat illo veritatis
+                        maiores porro perferendis adipisci laborum unde labore quas. Quod fugiat porro, architecto vero
+                        provident deleniti iste illum.</p>
+                </div>
+            </div>
+            <div class="box-2">
+                <div class="heading-2">
+                    <h1>Useful Links</h1>
+                </div>
+                <div class="context-2">
+                    <ol>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Rooms</a></li>
+                        <li><a href="">Astro</a></li>
+                        <li><a href="">Astro bot</a></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="box-3">
+                <div class="heading-3">
+                    <h1>Privacy</h1>
+                </div>
+                <div class="context-3">
+                    <ol>
+                        <li><a href="">Career</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Services</a></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="box-4">
+                <div class="heading-4">
+                    <h1>Have a Question?</h1>
+                </div>
+                <div class="icon-4">
+                    <span>&#9742;</span>
+                </div>
+                <div class="icon-context-4">
+                    <h3>9594677284</h3>
+                </div>
+                <div class="icon-42">
+                    <span>&#9993;</span>
+                </div>
+                <div class="icon-context-42">
+                    <h3>contact@footballsaga.com</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
+    import { getDatabase, update, ref } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js";
+
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBBXxMlzalrk494QJHB-6YRbjRv2j7PkwI",
+        authDomain: "register-e6e39.firebaseapp.com",
+        projectId: "register-e6e39",
+        storageBucket: "register-e6e39.appspot.com",
+        messagingSenderId: "90077288895",
+        appId: "1:90077288895:web:f257f443f884b14e7e690a"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const database = getDatabase(app);
+
+    const btnn = document.getElementById("signinbtn")
+
+    btnn.addEventListener('click', createaccount)
+
+    function createaccount() {
+        const email=document.getElementById("emailinput").value;
+        const password=document.getElementById("passwordinput").value;
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+                var lgdate = new Date();
+                update(ref(database, 'users/' + user.uid), {
+                    last_login: lgdate
+                })
+                    .then(() => {
+                        // Data saved successfully!
+                        alert("User logged in Successfully")
+                        location.href="2.html"
+                    })
+                    .catch((error) => {
+                        // The write failed...
+                        alert(error)
+                    });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage)
+            });
+    }
+</script>
+
+</html>
